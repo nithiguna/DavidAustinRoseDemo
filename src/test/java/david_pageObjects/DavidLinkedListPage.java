@@ -3,11 +3,7 @@ package david_pageObjects;
 import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -120,8 +116,8 @@ public class DavidLinkedListPage {
 		// ************************************************************
 		// WebElement element = driver.findElement(By.xpath("//div[contains(@class ,
 		// 'CodeMirror') and contains(@class,'cm-s-default')]//textarea"));
-				((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
-			
+				//((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
 		//((JavascriptExecutor) driver).executeScript("arguments[0].value='input';", inputCode);
 		// element1.sendKeys(input);
 

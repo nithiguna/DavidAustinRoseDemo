@@ -47,7 +47,7 @@
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<properties>
-						<dataproviderthreadcount>3</dataproviderthreadcount>
+						<dataproviderthreadcount>5</dataproviderthreadcount>
 						<parallel>tests</parallel>
 						<threadCount>3</threadCount>
 					</properties>
