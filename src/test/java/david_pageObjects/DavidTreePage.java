@@ -1,9 +1,11 @@
 package david_pageObjects;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -66,14 +68,20 @@ public class DavidTreePage {
 	@FindBy(xpath = "//a[text()='Implementation Of BST']")
 	WebElement impBst;
 
-	@FindBy(xpath = "//a[contains(text(),'Practice Questions')]")
-	WebElement practiceQuestions;
+//	@FindBy(xpath = "//a[contains(text(),'Practice Questions')]")
+//	WebElement practiceQuestions;
 
 	@FindBy(xpath = "//div[@align='left']/pre[@id='output']")
 	WebElement runOutputvalue;
+	
+	@FindBy (partialLinkText = "Practice Questions")
+	WebElement treePracticeLink;
 
 	@FindBy(xpath = "//div[@class='container']/div")
 	WebElement practicequesrow;
+	
+	@FindAll (value = { @FindBy (className = "list-group") })
+	List<WebElement> practiceQuestions;
 	
 	public void getStartedclick() {
 		getStarted.click();
@@ -144,8 +152,8 @@ public class DavidTreePage {
 		impBst.click();
 	}
 
-	public void pracQuestionsclick() {
-		practiceQuestions.click();
+	public void practiceQuestionslink() {
+		treePracticeLink.click();
 	}
 
 //	public void clickRun() {
@@ -164,6 +172,9 @@ public class DavidTreePage {
 	
 	public String practicequesrow() {
 		return practicequesrow.getText();
+	}
+	public int getPracticeQuestionsCount() {
+		return practiceQuestions.size();
 	}
 	
 	public String getActualTitle() {

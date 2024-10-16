@@ -11,7 +11,7 @@ import utilities.ConfigFileReader;
 @CucumberOptions(features = { "./src/test/resources/davidfeature" }, // feature files path
 		glue = { "davidStepDefinitions", "david_hooks" }, // step definition and hooks package
 		monochrome = true, tags =
-		//"@TreeTC_004",
+		//"@DavidTreePage",
 				"@DavidLoginpage or @DavidTreePage or @DavidLinkedList or @DavidDataStructure or @DavidHomepage", 
 		plugin = {
 				"pretty", "html:target/cucumber-reports/cucumber.html",
