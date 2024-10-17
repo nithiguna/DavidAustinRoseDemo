@@ -1,9 +1,13 @@
 package david_pageObjects;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import david_driverManager.WebDriverManager;
 
@@ -36,6 +40,8 @@ public class DavidLoginPage {
 	WebElement loginPassword;
 
 	public void signInclick() {
+		WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+		w1.until(ExpectedConditions.elementToBeClickable(signIn));
 		signIn.click();
 	}
 	
