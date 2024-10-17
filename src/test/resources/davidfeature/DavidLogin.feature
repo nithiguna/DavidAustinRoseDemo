@@ -1,4 +1,4 @@
-@DavidLoginpage
+@DavidLogin
 Feature: DsAlgo Portal Login Functionality
 
   @LoginCredentials @LoginDavidTC_001

@@ -1,4 +1,4 @@
-@DavidTreePage
+@DavidTree
 Feature: Ds Portal Tree Page Functionality
 
   Background: Successful login with valid credentials

@@ -111,7 +111,7 @@ public class DavidRegisterPage {
 	}
 	public String getActualTitle() {
 		String actualTitle = driver.getTitle();
-		System.out.println(actualTitle);
+		//System.out.println(actualTitle);
 		return actualTitle;
 	}
 	public DavidRegisterPage() {

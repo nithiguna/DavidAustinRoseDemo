@@ -78,6 +78,10 @@ public class DavidGraphPage {
 		return practiceQuestions.size();
 	}
 	
+	public String getActualTitle() {
+		return driver.getTitle();
+	}
+	
 	public DavidGraphPage() 
 	{ 
 		PageFactory.initElements(driver, this);

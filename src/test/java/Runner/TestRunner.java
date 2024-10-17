@@ -11,8 +11,9 @@ import utilities.ConfigFileReader;
 @CucumberOptions(features = { "./src/test/resources/davidfeature" }, // feature files path
 		glue = { "davidStepDefinitions", "david_hooks" }, // step definition and hooks package
 		monochrome = true, tags =
-		//"@DavidTreePage",
-				"@DavidLoginpage or @DavidTreePage or @DavidLinkedList or @DavidDataStructure or @DavidHomepage", 
+		//"@RegistrationTest002",
+				"@DavidLogin or @DavidRegister or @DavidArray or @DavidDataStructure or @DavidGraph "
+				+ "or  @DavidHome or @DavidLinkedList or @DavidQueue or @DavidTree or @DavidStack", 
 		plugin = {
 				"pretty", "html:target/cucumber-reports/cucumber.html",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
