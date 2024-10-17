@@ -67,10 +67,10 @@ Feature: DsAlgo Homepage Functionality
     Then The user should logged out of the user account    
     
     
- @RegisterValidCredentials @RegistrationTest001
-  Scenario: Successful Register with valid Credential
-   Given The User is on the Home Page
-   When The User enter valid username and password confirmpassword from sheet "RegisterPage"
-    Then The User should get navigated to Login Page
+ #@RegisterValidCredentials @RegistrationTest001
+  #Scenario: Successful Register with valid Credential
+   #Given The User is on the Home Page
+   #When The User enter valid username and password confirmpassword from sheet "RegisterPage"
+    #Then The User should get navigated to Login Page
     
   

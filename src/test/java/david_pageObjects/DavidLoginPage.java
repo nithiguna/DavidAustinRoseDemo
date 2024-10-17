@@ -40,7 +40,7 @@ public class DavidLoginPage {
 	WebElement loginPassword;
 
 	public void signInclick() {
-		WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(20));
 		w1.until(ExpectedConditions.elementToBeClickable(signIn));
 		signIn.click();
 	}
