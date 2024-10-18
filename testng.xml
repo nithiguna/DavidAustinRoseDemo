@@ -9,7 +9,7 @@
 		</classes>
 	</test>
 
-<!-- 
+ 
 	<test name="FirefoxTest">
 		<parameter name="browserType" value="FIREFOX"></parameter>
 		<classes>
@@ -19,7 +19,7 @@
 		</classes>
 	</test>
 
-
+<!--
 	<test name="EdgeTest">
 		<parameter name="browserType" value="EDGE"></parameter>
 		<classes>
