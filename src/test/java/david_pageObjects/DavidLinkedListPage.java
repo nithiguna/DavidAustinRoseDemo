@@ -119,11 +119,11 @@ public class DavidLinkedListPage {
 		// 'CodeMirror') and contains(@class,'cm-s-default')]//textarea"));
 				//((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
 		
-		driver.switchTo().frame("frame_name_or_id");  // Switch to the frame
-		WebElement codeMirrorTextArea = driver.findElement(By.xpath("//div[contains(@class, 'CodeMirror') and contains(@class,'cm-s-default')]//textarea"));
-		codeMirrorTextArea.sendKeys(input);
+//		driver.switchTo().frame("frame_name_or_id");  // Switch to the frame
+//		WebElement codeMirrorTextArea = driver.findElement(By.xpath("//div[contains(@class, 'CodeMirror') and contains(@class,'cm-s-default')]//textarea"));
+//		codeMirrorTextArea.sendKeys(input);
 		
-		//((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
 		//((JavascriptExecutor) driver).executeScript("arguments[0].value='input';", inputCode);
 		// element1.sendKeys(input);
 
