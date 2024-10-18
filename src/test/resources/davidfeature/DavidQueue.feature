@@ -23,8 +23,8 @@ Feature: DS Portal Queue Page Functionality
     When The User clicks Try Here button in Queue Implementation List Page
     Then the User should get navigated to the Try Editor Page
 
-  @QueueListTryEditor @QueueListEditorTest_004
-  Scenario Outline: validate the Try editor from the Implementation Lists page
+  @QueueListTryEditorPositive @QueueListEditorTest_004
+  Scenario Outline: validate the Try editor for positive input from the Implementation Lists page
     Given the User is on the Try Editor page through the Implementation Lists page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
@@ -32,9 +32,19 @@ Feature: DS Portal Queue Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
+     
+   @QueueListTryEditorNegative @QueueListEditorTest_018
+   Scenario Outline: validate the Try editor for negative input from the Implementation Lists page
+    Given the User is on the Try Editor page through the Implementation Lists page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<error>" in the alert
+
+    Examples: 
+      | code             | error                                            |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
       | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+       
 
   @QueuePracticeQuestionLink1 @QueueQuestionlinkTest_014
   Scenario: Validate the Practice Questions
@@ -54,19 +64,29 @@ Feature: DS Portal Queue Page Functionality
     When The User clicks Try Here button in the Implementation collection Page
     Then the User should get navigated to the Try Editor Page
 
-  @DeQueueTryEditor @DeQueueEditorTest_007
-  Scenario Outline: validate the Try editor from the Implementation collection Page
+  @DeQueueTryEditorPositive @DeQueueEditorTest_007
+  Scenario Outline: validate the Try editor for positive input from the Implementation collection Page
     Given the User is on the Try Editor page through the Implementation collection Page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
 
-    Examples: 
+     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
+
+  @DeQueueTryEditorNegative @DeQueueEditorTest_019
+  Scenario Outline: validate the Try editor for negative input from the Implementation collection Page
+    Given the User is on the Try Editor page through the Implementation collection Page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<error>" in the alert
+
+     Examples: 
+      | code             | error                                            |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
       | aer234@$         | SyntaxError: bad token T_OP on line 1            |
-
+       
+      
   @QueuePracticeQuestionLink2 @QueueQuestionTest_015
   Scenario: Validate the Practice Questions
     Given The User is on the Implementation collection Page
@@ -85,19 +105,28 @@ Feature: DS Portal Queue Page Functionality
     When The User clicks Try Here button in the Implementation Array Page
     Then the User should get navigated to the Try Editor Page
 
-  @QueueArrayTryEditor @QueueArrayEditorTest_010
-  Scenario Outline: validate the Try editor from the Implementation Array Page
+  @QueueArrayTryEditorPositive @QueueArrayEditorTest_010
+  Scenario Outline: validate the Try editor for positive input from the Implementation Array Page
     Given the User is on the Try Editor page through the Implementation Array Page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
 
-    Examples: 
+     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
+
+	@QueueArrayTryEditorNegative @QueueArrayEditorTest_020
+  Scenario Outline: validate the Try editor for negative input from the Implementation Array Page
+    Given the User is on the Try Editor page through the Implementation Array Page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<error>" in the alert
+
+     Examples: 
+      | code             | error                                            |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
       | aer234@$         | SyntaxError: bad token T_OP on line 1            |
-
+      
   @QueuePracticeQuestionLink3 @QueueQuestionTest_016
   Scenario: Validate the Practice Questions
     Given The User is on the Implementation collection Array Page
@@ -116,8 +145,8 @@ Feature: DS Portal Queue Page Functionality
     When The User clicks Try Here button in the Queue Operation Page
     Then the User should get navigated to the Try Editor Page
 
-  @QueueOperationTryEditor @QueueOperEditorTest_013
-  Scenario Outline: validate the Try editor from the Queue Operation Page
+  @QueueOperationTryEditorPositive @QueueOperEditorTest_013
+  Scenario Outline: validate the Try editor for positive input from the Queue Operation Page
     Given the User is on the Try Editor page through Queue Operation Page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
@@ -125,7 +154,16 @@ Feature: DS Portal Queue Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
+      
+   @QueueOperationTryEditorNegative @QueueOperEditorTest_021
+   Scenario Outline: validate the Try editor for negative input from the Queue Operation Page
+    Given the User is on the Try Editor page through Queue Operation Page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<error>" in the alert
+
+    Examples: 
+      | code             | error                                            |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
       | aer234@$         | SyntaxError: bad token T_OP on line 1            |
 

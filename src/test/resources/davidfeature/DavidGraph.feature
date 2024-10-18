@@ -23,8 +23,8 @@ Feature: DS Portal Graph Page Functionality
     When The User clicks Try Here button in the first topic Graph Page
     Then the User should get navigated to the Try Editor Page
 
-  @GraphTryEditor @GraphEditorTest_004
-  Scenario Outline: validate the Try editor from the first Topic Graph Page
+  @GraphTryEditorPositive @GraphEditorTest_004
+  Scenario Outline: validate the Try editor for positive input from the first Topic Graph Page
     Given the User is on the Try Editor page through the first Topic Graph Page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
@@ -32,9 +32,19 @@ Feature: DS Portal Graph Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
+      
+   @GraphTryEditorNegative @GraphEditorTest_011
+   Scenario Outline: validate the Try editor for negative input from the first Topic Graph Page
+    Given the User is on the Try Editor page through the first Topic Graph Page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<error>" in the alert
+
+     Examples: 
+      | code             | error                                            |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
       | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+      
       
   @GraphPracticeQuestionLink1 @GraphQuestionTest_009
   Scenario: Validate the Practice Questions
@@ -54,18 +64,28 @@ Feature: DS Portal Graph Page Functionality
     When The User clicks Try Here button in the Graph Representation Page
     Then the User should get navigated to the Try Editor Page
 
-  @GraphReprTryEditor @GraphReprEditorTest_007
-  Scenario Outline: validate the Try editor from the Graph Representation Page
+  @GraphReprTryEditorPositive @GraphReprEditorTest_007
+  Scenario Outline: validate the Try editor for positive input from the Graph Representation Page
     Given the User is on the Try Editor page through the Graph Representation Page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
-
-    Examples: 
+ 
+   Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
+    
+   @GraphReprTryEditorNegative @GraphReprEditorTest_012
+   Scenario Outline: validate the Try editor for negative input from the Graph Representation Page
+    Given the User is on the Try Editor page through the Graph Representation Page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<error>" in the alert
+ 
+    Examples: 
+      | code             | error                                            |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on line 1            | 
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+        
       
   @GraphPracticeQuestionLink2 @GraphQuestionTest_010
   Scenario: Validate the Practice Questions
