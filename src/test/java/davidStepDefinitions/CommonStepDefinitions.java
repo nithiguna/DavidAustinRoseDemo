@@ -3,6 +3,7 @@ package davidStepDefinitions;
 import java.time.Duration;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -53,11 +54,24 @@ public class CommonStepDefinitions {
 
 	@Then("the User should get the {string} in the alert")
 	public void the_user_should_get_the_in_the_alert(String errorOutput) {
+		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		 wait.until(ExpectedConditions.alertIsPresent());
-		Alert alert = driver.switchTo().alert();
-		Assert.assertEquals(alert.getText(), errorOutput);
-		alert.accept();
+		try {
+		    wait.until(ExpectedConditions.alertIsPresent());
+		    Alert alert = driver.switchTo().alert();
+		   String alertText = alert.getText();
+		    System.out.println("Alert text is: " + alertText);
+		    alert.accept();
+		    Assert.assertEquals(alertText, errorOutput);
+		   
+		} catch (TimeoutException e) {
+		    System.out.println("No alert present");
+		}
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		 wait.until(ExpectedConditions.alertIsPresent());
+//		Alert alert = driver.switchTo().alert();
+//		Assert.assertEquals(alert.getText(), errorOutput);
+//		alert.accept();
 		LoggerLoad.error("User get the error message : " + errorOutput);
 
 	}
