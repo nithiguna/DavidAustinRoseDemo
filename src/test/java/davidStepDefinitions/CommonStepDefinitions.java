@@ -1,7 +1,11 @@
 package davidStepDefinitions;
 
+import java.time.Duration;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import david_driverManager.WebDriverManager;
 import david_pageObjects.DavidLinkedListPage;
@@ -46,6 +50,8 @@ public class CommonStepDefinitions {
 
 	@Then("the User should get the {string} in the alert")
 	public void the_user_should_get_the_in_the_alert(String errorOutput) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 wait.until(ExpectedConditions.alertIsPresent());
 		Alert alert = driver.switchTo().alert();
 		Assert.assertEquals(alert.getText(), errorOutput);
 		alert.accept();

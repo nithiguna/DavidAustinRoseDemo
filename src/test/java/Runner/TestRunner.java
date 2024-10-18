@@ -12,8 +12,9 @@ import utilities.ConfigFileReader;
 		glue = { "davidStepDefinitions", "david_hooks" }, // step definition and hooks package
 		monochrome = true, tags =
 		//"@RegistrationTest002",
-				"@DavidLogin or @DavidRegister or @DavidArray or @DavidDataStructure or @DavidGraph "
-				+ "or  @DavidHome or @DavidLinkedList or @DavidQueue or @DavidTree or @DavidStack", 
+				" @DavidDataStructure or @DavidGraph ",
+				//@DavidLogin or @DavidRegister or @DavidArray or
+				//+ "or  @DavidHome or @DavidLinkedList or @DavidQueue or @DavidTree or @DavidStack", 
 		plugin = {
 				"pretty", "html:target/cucumber-reports/cucumber.html",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
@@ -28,7 +29,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	}
 
 	@Override
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
