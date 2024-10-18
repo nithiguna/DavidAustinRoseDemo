@@ -44,7 +44,10 @@ public class CommonStepDefinitions {
 	@Then("the User should get the {string} in the screen")
 	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
 		String actualCodeOutput = linkedObj.getOutput();
+		System.out.println("The ActualCodeOutput: " +actualCodeOutput);
+		System.out.println("The ExpectedOutput: " +expectedOutput);
 		Assert.assertEquals(actualCodeOutput, expectedOutput);
+		
 		LoggerLoad.info("User get the code ouput as  : " + expectedOutput);
 	}
 
