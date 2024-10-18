@@ -15,7 +15,7 @@ public class DavidLoginPage {
 	WebDriver driver = WebDriverManager.getDriver();
 
 	//@FindBy(xpath = "//a[text()='Sign in']")
-	@FindBy(xpath = "//ul/a[text()='Sign in']")
+	@FindBy(xpath = "//a[text()='Sign in']")
 	WebElement signIn;
 
 	//***************************************************

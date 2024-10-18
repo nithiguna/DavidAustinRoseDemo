@@ -12,9 +12,8 @@ import utilities.ConfigFileReader;
 		glue = { "davidStepDefinitions", "david_hooks" }, // step definition and hooks package
 		monochrome = true, tags =
 		//"@RegistrationTest002",
-				" @DavidDataStructure or @DavidGraph ",
-				//@DavidLogin or @DavidRegister or @DavidArray or
-				//+ "or  @DavidHome or @DavidLinkedList or @DavidQueue or @DavidTree or @DavidStack", 
+				" @DavidDataStructure or @DavidGraph or @DavidStack  ",
+				//+ "or  @DavidHome or @DavidLinkedList or @DavidQueue or @DavidTree or @DavidStack or @DavidArray", 
 		plugin = {
 				"pretty", "html:target/cucumber-reports/cucumber.html",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",

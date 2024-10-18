@@ -59,7 +59,8 @@ public class DavidLinkedListPage {
 	@FindBy(xpath = "//button")
 	WebElement runButton;
 
-	@FindBy(xpath = "//*[@id='output']")
+	// @FindBy(xpath = "//*[@id='output']")
+	@FindBy(xpath = "//body/div/div/div/pre[@id='output']")
 	WebElement output;
 
 	@FindBy(id = "answer_form")
@@ -117,14 +118,16 @@ public class DavidLinkedListPage {
 		// ************************************************************
 		// WebElement element = driver.findElement(By.xpath("//div[contains(@class ,
 		// 'CodeMirror') and contains(@class,'cm-s-default')]//textarea"));
-				//((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
-		
+		// ((JavascriptExecutor)
+		// driver).executeScript("arguments[0].value='"+input+"';", inputCode);
+
 //		driver.switchTo().frame("frame_name_or_id");  // Switch to the frame
 //		WebElement codeMirrorTextArea = driver.findElement(By.xpath("//div[contains(@class, 'CodeMirror') and contains(@class,'cm-s-default')]//textarea"));
 //		codeMirrorTextArea.sendKeys(input);
-		
-		((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
-		//((JavascriptExecutor) driver).executeScript("arguments[0].value='input';", inputCode);
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='" + input + "';", inputCode);
+		// ((JavascriptExecutor) driver).executeScript("arguments[0].value='input';",
+		// inputCode);
 		// element1.sendKeys(input);
 
 		// ****************************************************************************
@@ -154,17 +157,22 @@ public class DavidLinkedListPage {
 
 	public void clickRunBtn() {
 		runButton.click();
+
 	}
 
 	public String getOutput() {
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		wait.until(ExpectedConditions.visibilityOf(output));
+
 		return output.getText();
-		//output.clear();
+		// output.clear();
 	}
 
 	public void getOutput1() {
-		//return output.getText();
+		// return output.getText();
 		output.clear();
 	}
+
 	public void clickPracticeLink() {
 		linkedListPracticeLink.click();
 	}

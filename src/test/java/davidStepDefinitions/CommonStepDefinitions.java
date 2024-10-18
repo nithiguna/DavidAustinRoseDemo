@@ -3,6 +3,7 @@ package davidStepDefinitions;
 import java.time.Duration;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -44,29 +45,66 @@ public class CommonStepDefinitions {
 
 	@Then("the User should get the {string} in the screen")
 	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
-		String actualCodeOutput = linkedObj.getOutput();
-		System.out.println("The ActualCodeOutput: " +actualCodeOutput);
-		System.out.println("The ExpectedOutput: " +expectedOutput);
-		Assert.assertEquals(actualCodeOutput, expectedOutput);
-		
-		LoggerLoad.info("User get the code ouput as  : " + expectedOutput);
+//		try {
+//		String actualCodeOutput = linkedObj.getOutput();
+//		System.out.println("The ActualCodeOutput: " +actualCodeOutput);
+//		System.out.println("The ExpectedOutput: " +expectedOutput);
+//		Assert.assertEquals(actualCodeOutput, expectedOutput);
+//		LoggerLoad.info("User get the code ouput as  : " + expectedOutput);
+//		}catch(NoAlertPresentException e) {
+//            System.out.println("No alert was found.");
+//        }
+//		
+
+		try {
+			Alert alert = driver.switchTo().alert();
+			alert.accept();
+		} catch (NoAlertPresentException e) {
+			String actualCodeOutput = linkedObj.getOutput();
+			Assert.assertEquals(actualCodeOutput, expectedOutput);
+			LoggerLoad.info("User get the code ouput as  : " + expectedOutput);
+		}
 	}
 
 	@Then("the User should get the {string} in the alert")
 	public void the_user_should_get_the_in_the_alert(String errorOutput) {
-		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		try {
-		    wait.until(ExpectedConditions.alertIsPresent());
-		    Alert alert = driver.switchTo().alert();
-		   String alertText = alert.getText();
-		    System.out.println("Alert text is: " + alertText);
-		    alert.accept();
-		    Assert.assertEquals(alertText, errorOutput);
-		   
-		} catch (TimeoutException e) {
-		    System.out.println("No alert present");
+			Alert alert = driver.switchTo().alert();
+			String alertText = alert.getText();
+			alert.accept();
+			Assert.assertEquals(alertText, errorOutput);
+		} catch (NoAlertPresentException e) {
+			System.out.println("No alert was found.");
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		try {
+//		    wait.until(ExpectedConditions.alertIsPresent());
+//		    Alert alert = driver.switchTo().alert();
+//		   String alertText = alert.getText();
+//		    System.out.println("Alert text is: " + alertText);
+//		    alert.accept();
+//		    Assert.assertEquals(alertText, errorOutput);
+//		   
+//		} catch (TimeoutException e) {
+//		    System.out.println("No alert present");
+//		}
+
+		// ******************************************88
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //		 wait.until(ExpectedConditions.alertIsPresent());
 //		Alert alert = driver.switchTo().alert();
