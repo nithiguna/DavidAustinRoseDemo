@@ -19,7 +19,7 @@ public class DavidGraphPage {
 	@FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Graph']")
 	WebElement graphLink;
 	
-	@FindBy(xpath="//a[normalize-space()='Try here>>>']")
+	@FindBy(xpath="//a[text()='Try here>>>']")
 	WebElement graphTryHere;
 	
 	@FindBy(xpath="//button[normalize-space()='Run']")
