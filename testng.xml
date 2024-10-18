@@ -17,7 +17,7 @@
 
 
   
- <!--  <test name="FirefoxTest" >
+   <test name="FirefoxTest" >
   	<parameter name="browserType" value="FIREFOX"></parameter>
     <classes>
       <class name="Runner.TestRunner">
@@ -35,7 +35,7 @@
       </class>
     </classes>
   </test> 
-  -->
+  
   
 
 </suite> <!-- Suite -->
