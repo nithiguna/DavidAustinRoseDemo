@@ -43,8 +43,7 @@ public class CommonStepDefinitions {
 		linkedObj.clickRunBtn();
 	}
 
-	@Then("the User should get the {string} in the screen")
-	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
+	
 //		try {
 //		String actualCodeOutput = linkedObj.getOutput();
 //		System.out.println("The ActualCodeOutput: " +actualCodeOutput);
@@ -55,6 +54,8 @@ public class CommonStepDefinitions {
 //            System.out.println("No alert was found.");
 //        }
 //		
+	@Then("the User should get the {string} in the screen")
+	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
 
 		try {
 			Alert alert = driver.switchTo().alert();
@@ -79,6 +80,26 @@ public class CommonStepDefinitions {
 		
 		
 		
+		
+
+//		@Then("the User should get the {string} in the screen")
+//		public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
+//				
+//			String actualCodeOutput = linkedlistObj.getOutput();
+//		    Assert.assertEquals(actualCodeOutput,expectedOutput);
+//		    LoggerLoad.info("actual output "+expectedOutput);
+//		    
+//		}
+//		
+//		@Then("the User should get the {string} in the alert")
+//		public void the_user_should_get_the_in_the_alert(String errorOutput) {
+//			Alert alert = driver.switchTo().alert();
+//			Assert.assertEquals(alert.getText(), errorOutput);
+//			LoggerLoad.info("actual error "+alert.getText());
+//			
+//			
+//		    
+//		}
 		
 		
 		

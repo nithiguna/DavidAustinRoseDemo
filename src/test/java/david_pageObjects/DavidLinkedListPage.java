@@ -163,8 +163,10 @@ public class DavidLinkedListPage {
 	public String getOutput() {
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //		wait.until(ExpectedConditions.visibilityOf(output));
-
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.textToBePresentInElement(output, output.getText()));
 		return output.getText();
+		//return output.getText();
 		// output.clear();
 	}
 
