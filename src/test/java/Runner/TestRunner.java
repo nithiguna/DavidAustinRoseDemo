@@ -13,8 +13,7 @@ import utilities.ConfigFileReader;
    glue = {"davidStepDefinitions","david_hooks"},
    monochrome = true,
 
-   tags= "@Login or @RegisterInvalidCredentials or @LinkedList or "
-   		+ "@Stack or @Tree or @DataStructure or @Queue or @Graph or @Array",
+   tags= "@DavidLogin or @RegistrationTest002 or @DavidLinkedList or @DavidStack or @DavidTree or @DavidDataStructure or @DavidQueue or @DavidGraph or @DavidHome or @DavidArray",
    plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
    		"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
    		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
